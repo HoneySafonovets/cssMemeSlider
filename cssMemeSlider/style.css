@@ -99,9 +99,44 @@ body {
 
 .slider__wrapper {
   max-width: 1024px;
-  margin: 0 auto;
+  margin: 30px auto;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border: 1px solid #000000;
+  border-radius: 40px;
+  background-color: #708090;
+  /* justify-content: center; */
 }
 
 .slider {
-  /* margin: 0 auto; */
+  border: 1px solid #000000;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.slider__value {
+  display: flex;
+  /* flex-direction: column; */
+}
+
+.slider__value-item {
+  width: 1000px;
+  height: 500px;
+}
+
+.slider__controls {
+  text-align: center;
+}
+
+.slider__sub {
+  display: flex;
+}
+
+.slider__text {
+  text-align: center;
+  font-family: 'roboto', sans-serif;
+  color: #FFFFFF;
+  font-size: 32px;
 }
