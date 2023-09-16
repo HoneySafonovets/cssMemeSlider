@@ -88,3 +88,20 @@ label {
 legend {
   display: block;
 }
+
+
+/* Start styles for TASK */
+
+body {
+  margin: 0 auto;
+  background-color: #2F4F4F;
+}
+
+.slider__wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.slider {
+  /* margin: 0 auto; */
+}
