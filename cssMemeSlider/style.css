@@ -170,9 +170,20 @@ body {
 
 /* Hover styles for radio-btn */
 
-.slider__item > .slider__btn:hover {
+.slider__item:hover .slider__btn {
   /* scale: 1.3; */
-  background-color: #008080;
+  background-color: #8FBC8F;
+  opacity: 1;
+  transition: all 0.3s ease-in;
+}
+
+.slider__item:not(:hover) .slider__btn {
+  background-color: #000;
+  transition: all 0.3s ease-in;
+}
+
+.slider__item:hover .slider__btn {
+  background-color: #8FBC8F;
   opacity: 1;
   transition: all 0.3s ease-in;
 }
@@ -180,13 +191,6 @@ body {
 .slider__item:active {
   scale: 0.8;
 }
-
-
-/* .slider__item:not(:hover) {
-  scale: 1;
-  opacity: 1;
-  transition: all 0.3s ease-in;
-} */
 
 /* Work slider */
 
@@ -198,18 +202,25 @@ body {
   opacity: 1;
   scale: 1.5;
   background-color: #FFFFFF;
-  /* border: 1px solid #000000; */
-  transition: all 0.3s ease-in;
+  transition: all 0.2s ease-in;
 }
 
-#slider__item-1:checked + .slider__btn-1:hover,
-#slider__item-2:checked + .slider__btn-2:hover,
-#slider__item-3:checked + .slider__btn-3:hover,
-#slider__item-4:checked + .slider__btn-4:hover,
-#slider__item-5:checked + .slider__btn-5:hover {
-  background-color: #008B8B;
-  /* border: 1px solid #000000; */
-  transition: all 0.4s ease-in;
+#slider__item-1:checked:hover + .slider__btn-1,
+#slider__item-2:checked:hover + .slider__btn-2,
+#slider__item-3:checked:hover + .slider__btn-3,
+#slider__item-4:checked:hover + .slider__btn-4,
+#slider__item-5:checked:hover + .slider__btn-5 {
+  background-color: #8FBC8F;
+  transition: all 0.2s ease-in;
+}
+
+#slider__item-1:checked:not(:hover) + .slider__btn-1,
+#slider__item-2:checked:not(:hover) + .slider__btn-2,
+#slider__item-3:checked:not(:hover) + .slider__btn-3,
+#slider__item-4:checked:not(:hover) + .slider__btn-4,
+#slider__item-5:checked:not(:hover) + .slider__btn-5 {
+  background-color: #FFFFFF;
+  transition: all 0.2s ease-in;
 }
 
 /* Text for meme */
