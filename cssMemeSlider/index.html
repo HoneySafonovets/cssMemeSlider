@@ -11,8 +11,10 @@
   <title>cssMemeSlider</title>
 </head>
 <body>
-  <div class="slider__wrapper">
-    <div class="slider">
+  <header></header>
+  <main class="slider__wrapper">
+    <section class="slider">
+      <h1 class="hidden"></h1>
       <div class="slider__value">
         <img src="./assets/bag.png" alt="Bag" class="slider__value-item">
         <img src="./assets/shame_1.jpg" alt="That's too bad&#41;&#41;&#41;" class="slider__value-item">
@@ -20,33 +22,39 @@
         <img src="./assets/shame_3.jpg" alt="That's too bad&#41;&#41;&#41;" class="slider__value-item">
         <img src="./assets/cat__meme.jpg" alt="Are we?" class="slider__value-item">
       </div>
-    </div>
-    <div>
-      <label for="#" class="slider__controls">
-        <label for="#">
+    </section>
+    <section>
+      <div class="slider__controls">
+        <label for="#" class="slider__item slider__item-1">
           <input type="radio" name="control" value="radio-1" class="slider__input">
+          <span class="slider__btn"></span>
         </label>
-        <label for="#">
+        <label for="#" class="slider__item slider__item-2">
           <input type="radio" name="control" value="radio-2" class="slider__input">
+          <span class="slider__btn"></span>
         </label>
-        <label for="#">
+        <label for="#" class="slider__item slider__item-3">
           <input type="radio" name="control" value="radio-3" class="slider__input">
+          <span class="slider__btn"></span>
         </label>
-        <label for="#">
+        <label for="#" class="slider__item slider__item-4">
           <input type="radio" name="control" value="radio-4" class="slider__input">
+          <span class="slider__btn"></span>
         </label>
-        <label for="#">
+        <label for="#" class="slider__item slider__item-5">
           <input type="radio" name="control" value="radio-5" class="slider__input">
+          <span class="slider__btn"></span>
         </label>
-      </label>
-    </div>
-    <div class="slider__sub">
-      <p class="slider__text">Do not give up!</p>
-      <p class="slider__text">It's a pity, few will understand&#41;&#41;&#41;&#41;</p>
-      <p class="slider__text">Dev moment</p>
-      <p class="slider__text">That's too bad&#41;&#41;&#41;&#41;</p>
-      <p class="slider__text">Are we?</p>
-    </div>
-  </div>
+      </div>
+    </section>
+    <ul class="slider__sub">
+      <li class="slider__text">Do not give up!</li>
+      <li class="slider__text">It's a pity, few will understand&#41;&#41;&#41;&#41;</li>
+      <li class="slider__text">Dev moment</li>
+      <li class="slider__text">That's too bad&#41;&#41;&#41;&#41;</li>
+      <li class="slider__text">Are we?</li>
+    </ul>
+  </main>
+  <footer></footer>
 </body>
 </html>
