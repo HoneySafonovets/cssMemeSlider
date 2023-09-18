@@ -1,0 +1,445 @@
+/* Reset styles  */
+
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Links */
+
+a, a:link, a:visited {
+  text-decoration: none;
+}
+
+a:hover  {
+  text-decoration: none;
+}
+
+/* Common */
+
+aside, nav, footer, header, section, main {
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul, ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Form */
+
+input, textarea, button, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button, input[type="submit"] {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+input:focus, input:active,
+button:focus, button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
+
+/* Basic styles */
+
+.hidden {
+  display: none;
+}
+
+/* Start styles for TASK */
+
+body {
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 50%;
+  overflow-x: hidden;
+}
+
+.slider__wrapper {
+  max-width: 50rem;
+  height: 50em;
+  margin: 2.5% auto;
+  padding: 2.5% 2.5%;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  border: 0.2em solid #000000;
+  border-radius: 5%;
+  background-color: #6495ED;
+  overflow: hidden;
+  /* justify-content: center; */
+}
+
+.slider {
+  margin: auto auto;
+  width: 86%;
+  height: 100%;
+  border: 0.2em solid #000000;
+  border-radius: 2.5%;
+  overflow: hidden;
+}
+
+.slider__value {
+  display: flex;
+  width: 100%;
+  height: 68%;
+  /* flex-direction: column; */
+}
+
+.slider__value-item {
+  width: 150%;
+  height: 150%;
+}
+
+/* Controls media */
+
+.slider__controls-section {
+  display: flex;
+  margin: 0 auto;
+  width: 86%;
+  gap: 0.5em;
+  /* justify-content: space-between; */
+}
+
+/* Text for meme */
+.slider__sub {
+  display: flex;
+  width: 400%;
+  height: 100%;
+  flex-wrap: nowrap;
+}
+
+.slider__text {
+  display: none;
+  overflow: hidden;
+  width: 10em;
+  height: 2em;
+  text-align: left;
+  vertical-align: center;
+  font-family: 'roboto', sans-serif;
+  color: #FFFFFF;
+  font-size: 1.4em;
+}
+
+/* .slider__text.slider__text:nth-child(3n) {
+  font-size: 1.1em;
+  width: 17em;
+} */
+
+/* True radio */
+
+.slider__input {
+  display: none;
+}
+
+.slider__controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Custom radio-button */
+
+.slider__item {
+  padding: 1rem;
+}
+
+.slider__btn {
+  background-color: #000000;
+  display: inline-block;
+  border-radius: 1.5em;
+  width: 2.5em;
+  height: 0.35em;
+  opacity: 1;
+}
+
+/* Hover styles for radio-btn */
+
+.slider__item:hover .slider__btn {
+  background-color: #8FBC8F;
+  opacity: 1;
+  transition: all 0.3s ease-in;
+}
+
+.slider__item:not(:hover) .slider__btn {
+  background-color: #000;
+  transition: all 0.3s ease-in;
+}
+
+.slider__item:hover .slider__btn {
+  background-color: #8FBC8F;
+  opacity: 1;
+  transition: all 0.3s ease-in;
+}
+
+.slider__item:active {
+  scale: 0.8;
+}
+
+/* Work radio-buttons */
+
+#slider__item-1:checked + .slider__btn-1,
+#slider__item-2:checked + .slider__btn-2,
+#slider__item-3:checked + .slider__btn-3,
+#slider__item-4:checked + .slider__btn-4,
+#slider__item-5:checked + .slider__btn-5 {
+  opacity: 1;
+  scale: 1.5;
+  background-color: #FFFFFF;
+  transition: all 0.2s ease-in;
+}
+
+#slider__item-1:checked:hover + .slider__btn-1,
+#slider__item-2:checked:hover + .slider__btn-2,
+#slider__item-3:checked:hover + .slider__btn-3,
+#slider__item-4:checked:hover + .slider__btn-4,
+#slider__item-5:checked:hover + .slider__btn-5 {
+  background-color: #8FBC8F;
+  transition: all 0.2s ease-in;
+}
+
+#slider__item-1:checked:not(:hover) + .slider__btn-1,
+#slider__item-2:checked:not(:hover) + .slider__btn-2,
+#slider__item-3:checked:not(:hover) + .slider__btn-3,
+#slider__item-4:checked:not(:hover) + .slider__btn-4,
+#slider__item-5:checked:not(:hover) + .slider__btn-5 {
+  background-color: #FFFFFF;
+  transition: all 0.2s ease-in;
+}
+
+/* Work slider */
+.slider__wrapper:has(#slider__item-1:checked) .slider > .slider__value {
+  transform: translateX(0);
+  transition: transform 0.4s ease-in;
+}
+
+.slider__wrapper:has(#slider__item-2:checked) .slider > .slider__value {
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in;
+}
+
+.slider__wrapper:has(#slider__item-3:checked) .slider > .slider__value {
+  transform: translateX(-200%);
+  transition: transform 0.4s ease-in;
+}
+
+.slider__wrapper:has(#slider__item-4:checked) .slider > .slider__value {
+  transform: translateX(-300%);
+  transition: transform 0.4s ease-in;
+}
+
+/* .slider__wrapper:has(#slider__item-5:checked) .slider > .slider__value {
+  transform: translateX(-400%);
+  transition: transform 0.4s ease-in;
+} */
+
+/* Animation for TEXT */
+@keyframes slider__animation {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+/* Animation for 3nth-child */
+@keyframes slider__animation-4 {
+  from {
+    opacity: 0;
+    transform: translateX(-30%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+/* Work SLIDER-TEXT */
+.slider__wrapper:has(#slider__item-1:checked) .slider__controls-section > .slider__sub > .slider__text-1 {
+  display: block;
+  /* transform: translateX(-50%);
+  transition: transform 0.4s ease-in; */
+  animation: slider__animation 0.2s 1;
+}
+
+.slider__wrapper:has(#slider__item-2:checked) .slider__controls-section > .slider__sub > .slider__text-2 {
+  display: block;
+  /* transform: translateX(-50%);
+  transition: transform 0.4s ease-in; */
+  animation: slider__animation 0.2s 1;
+}
+
+.slider__wrapper:has(#slider__item-3:checked) .slider__controls-section > .slider__sub > .slider__text-3 {
+  display: block;
+  /* transform: translateX(-50%);
+  transition: transform 0.4s ease-in; */
+  animation: slider__animation-4 0.2s 1;
+}
+
+.slider__wrapper:has(#slider__item-4:checked) .slider__controls-section > .slider__sub > .slider__text-4 {
+  display: block;
+  /* transform: translateX(-50%);
+  transition: transform 0.4s ease-in; */
+  animation: slider__animation 0.2s 1;
+}
+
+.slider__wrapper:has(#slider__item-5:checked) .slider__controls-section > .slider__sub > .slider__text-5 {
+  display: block;
+  /* transform: translateX(-50%);
+  transition: transform 0.4s ease-in; */
+  animation: slider__animation 0.2s 1;
+}
+
+
+@media screen and (max-width: 900px) {
+  .slider__wrapper {
+    width: 100%;
+    height: 80%;
+  }
+  
+  .slider {
+    width: 86%;
+  }
+
+  .slider__controls-section {
+    width: 86%;
+    /* justify-content: space-between; */
+  }
+
+  /* .slider__controls {
+    width: 100%;
+  } */
+
+  .slider__sub {
+    width: 80%;
+    margin: 0 auto 0 0;
+  }
+
+  .slider__value-item {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .slider__text {
+    margin: 0 auto 0 0;
+  }
+}
+
+@media screen and (max-width: 806px) {
+  .slider__wrapper {
+    width: 90%;
+  }
+
+  .slider {
+    width: 95%;
+  }
+
+  .slider__value {
+    width: 100%;
+  }
+
+  .slider__controls-section {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 95%;
+    gap: 2em;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  .slider__controls {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 502px) {
+  .slider__wrapper {
+    width: 90%;
+  }
+
+  .slider {
+    width: 95%;
+  }
+
+  .slider__value {
+    width: 100%;
+  }
+
+  .slider__controls-section {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 90%;
+    gap: 2em;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  .slider__controls {
+    width: 100%;
+  }
+
+  .slider__btn {
+    width: 2em;
+    height: 0.25em;
+  }
+}
