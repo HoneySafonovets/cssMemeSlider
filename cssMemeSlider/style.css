@@ -91,3 +91,17 @@ legend {
 
 
 /* Add basic styles */
+
+body {
+  background-color: #DCDCDC;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.main {
+  max-width: 70%;
+  max-height: 100vh;
+  margin: 10% auto;
+}
