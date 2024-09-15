@@ -93,15 +93,53 @@ legend {
 /* Add basic styles */
 
 body {
-  background-color: #DCDCDC;
+  background-color: var(--main-color);
+  --main-color: #151719;
+  --font-color: #FFFFFF;
+  --font-size-title: 3rem;
+  --font-size-basic: 1rem;
+  --font-family: "Roboto", sans-serif;
+  color: var(--font-color);
+  font-family: var(--font-family);
+  font-size: var(--font-size-basic);
 }
 
 .container {
-  margin: 0 auto;
+  margin: 8rem auto;
+  max-width: 80rem;
+}
+
+.header__title {
+  display: flex;
+  justify-content: center;
+  font-size: var(--font-size-title);
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
 }
 
 .main {
+  border: 0.2rem solid var(--font-color);
+  border-radius: 0.2rem;
   max-width: 70%;
-  max-height: 100vh;
-  margin: 10% auto;
+  height: 60vh;
+  margin: 0.5rem auto;
+}
+
+
+.footer {
+  margin-top: 2rem;
+}
+
+.footer__img {
+  width: 5rem;
+  height: 5rem;
+}
+
+.footer__name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-size-title);
+  color: var(--font-color);
+  gap: 2rem;
 }
