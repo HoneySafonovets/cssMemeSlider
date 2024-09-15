@@ -301,6 +301,9 @@ body {
 /* Footer styles */
 
 .footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 2rem;
 }
 
@@ -311,6 +314,7 @@ body {
 
 .footer__name {
   display: flex;
+  width: 10rem;
   justify-content: center;
   align-items: center;
   font-size: clamp(1rem, 2rem, 2rem);
@@ -335,6 +339,16 @@ body {
     scale: 1.5;
     background-color: #DC143C;
     transition: all 0.2s ease-in;
+  }
+
+
+  .footer__name:hover {
+    color: #5F9EA0;
+    transition: color 0.3s ease-in;
+  }
+  .footer__name:not(hover) {
+    color: var(--font-color);
+    transition: color 0.3s ease-in;
   }
 }
 
