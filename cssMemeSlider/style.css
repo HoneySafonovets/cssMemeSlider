@@ -155,7 +155,7 @@ body {
   display: flex;
   justify-content: space-between;
   /* gap: 35rem; */
-  /* width: 100%; */
+  width: 100%;
 }
 
 /* Slider text */
@@ -184,7 +184,11 @@ body {
   display: none;
 }
 
-.main__container:has(#slider__ui-1:checked) .slider__ui > .slider__list > #slider__text-1 {
+/* Active textunder IMAGE */
+.main__container:has(#slider__ui-1:checked) .slider__info > .slider__list > #slider__text-1,
+.main__container:has(#slider__ui-2:checked) .slider__info > .slider__list > #slider__text-2,
+.main__container:has(#slider__ui-3:checked) .slider__info > .slider__list > #slider__text-3,
+.main__container:has(#slider__ui-4:checked) .slider__info > .slider__list > #slider__text-4 {
   display: block;
 }
 
@@ -194,14 +198,14 @@ body {
   align-items: center;
   height: 2rem;
   gap: 1rem;
-  border: 0.1rem solid var(--font-color);
+  /* border: 0.1rem solid var(--font-color); */
 }
 
 .slider__ui-area {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 2rem;
+  width: 2.5rem;
   height: 100%;
 }
 
@@ -213,19 +217,8 @@ body {
 #slider__ui-2:checked + .slider__ui-item,
 #slider__ui-3:checked + .slider__ui-item,
 #slider__ui-4:checked + .slider__ui-item {
-  /* opacity: 1; */
   scale: 1.5;
-  background-color: red;
-  transition: all 0.2s ease-in;
-}
-
-#slider__ui-1:not(:checked) + .slider__ui-item,
-#slider__ui-2:not(:checked) + .slider__ui-item,
-#slider__ui-3:not(:checked) + .slider__ui-item,
-#slider__ui-4:not(:checked) + .slider__ui-item {
-  /* opacity: 1; */
-  scale: 1;
-  background-color: var(--font-color);
+  background-color: #006400;
   transition: all 0.2s ease-in;
 }
 
@@ -239,30 +232,48 @@ body {
   height: 1rem;
 }
 
+.slider__ui-item:active {
+  transform: scale(2);
+  transition: all 0.3s ease-in;
+}
+
 .radio-pseudo {
-  display: none;
+  /* display: none; */
   background-color: var(--font-color);
   border-radius: 0.5rem;
-  width: 0.6rem;
-  height: 0.6rem;
+  width: 0;
+  height: 0;
 }
 
 #slider__ui-1:checked + .slider__ui-item .radio-pseudo,
 #slider__ui-2:checked + .slider__ui-item .radio-pseudo,
 #slider__ui-3:checked + .slider__ui-item .radio-pseudo,
 #slider__ui-4:checked + .slider__ui-item .radio-pseudo {
-  /* opacity: 1; */
-  display: block;
+  /* display: block; */
+  width: 0.6rem;
+  height: 0.6rem;
   transition: all 0.2s ease-in;
 }
-#slider__ui-1:not(:checked) + .slider__ui-item .radio-pseudo,
-#slider__ui-2:not(:checked) + .slider__ui-item .radio-pseudo,
-#slider__ui-3:not(:checked) + .slider__ui-item .radio-pseudo,
-#slider__ui-4:not(:checked) + .slider__ui-item .radio-pseudo {
-  /* opacity: 1; */
-  display: none;
+
+
+#slider__ui-1:not(:checked) + .slider__ui-item,
+#slider__ui-2:not(:checked) + .slider__ui-item,
+#slider__ui-3:not(:checked) + .slider__ui-item,
+#slider__ui-4:not(:checked) + .slider__ui-item {
+  scale: 1;
+  background-color: var(--font-color);
   transition: all 0.2s ease-in;
 }
+
+#slider__ui-1:not(:checked) + .slider__ui-item,
+#slider__ui-2:not(:checked) + .slider__ui-item,
+#slider__ui-3:not(:checked) + .slider__ui-item,
+#slider__ui-4:not(:checked) + .slider__ui-item {
+  scale: 1;
+  background-color: var(--font-color);
+  transition: all 0.2s ease-in;
+}
+
 
 /* Footer styles */
 
@@ -286,22 +297,20 @@ body {
 
 /* Media querys */
 @media screen and (hover: hover) {
-  .slider__ui-area:hover {
+  .slider__ui-area:hover #slider__ui-1:not(:checked) + .slider__ui-item,
+  .slider__ui-area:hover #slider__ui-2:not(:checked) + .slider__ui-item,
+  .slider__ui-area:hover #slider__ui-3:not(:checked) + .slider__ui-item,
+  .slider__ui-area:hover #slider__ui-4:not(:checked) + .slider__ui-item {
     cursor: pointer;
-    background-color: #000;
-  }
-  .slider__ui-area:hover .slider__ui-item-2 {
-    cursor: pointer;
-    background-color: #000;
+    background-color: #006400;
   }
 
   #slider__ui-1:checked:hover + .slider__hover-1,
   #slider__ui-2:checked:hover + .slider__hover-2,
   #slider__ui-3:checked:hover + .slider__hover-3,
   #slider__ui-4:checked:hover + .slider__hover-4 {
-    /* opacity: 1; */
     scale: 1.5;
-    background-color: green;
+    background-color: #DC143C;
     transition: all 0.2s ease-in;
   }
 }
