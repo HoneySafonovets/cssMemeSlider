@@ -1,8 +1,8 @@
 /* Reset and base styles  */
 
 * {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   border: none;
 }
 
@@ -139,8 +139,9 @@ body {
 .slider__body {
   /* display: flex; */
   /* flex-direction: row; */
+  justify-content: space-between;
   overflow: hidden;
-  max-width: 100%;
+  max-width: 200%;
   height: 35rem;
 }
 
@@ -171,31 +172,54 @@ body {
 .slider__text {
   /* max-width: 10rem; */
   display: block;
-  width: 300px;
+  width: 10em;
   font-size: 1.5rem;
   display: none;
 }
 
-.slider__text {
-  /* max-width: 10rem; */
-  display: block;
-  width: 300px;
-  font-size: 1.5rem;
-  display: none;
+@keyframes text-animation {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
 }
 
-/* Active textunder IMAGE */
+/* Active IMAGE and animation for transform */
+.main__container:has(#slider__ui-1:checked) .slider__body > .slider__item {
+  transform: translateY(0);
+  transition: transform 0.3s ease-in;
+}
+.main__container:has(#slider__ui-2:checked) .slider__body > .slider__item {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in;
+}
+.main__container:has(#slider__ui-3:checked) .slider__body > .slider__item {
+  transform: translateY(-200%);
+  transition: transform 0.3s ease-in;
+}
+.main__container:has(#slider__ui-4:checked) .slider__body > .slider__item {
+  transform: translateY(-300%);
+  transition: transform 0.3s ease-in;
+}
+
+/* Active text under IMAGE */
 .main__container:has(#slider__ui-1:checked) .slider__info > .slider__list > #slider__text-1,
 .main__container:has(#slider__ui-2:checked) .slider__info > .slider__list > #slider__text-2,
 .main__container:has(#slider__ui-3:checked) .slider__info > .slider__list > #slider__text-3,
 .main__container:has(#slider__ui-4:checked) .slider__info > .slider__list > #slider__text-4 {
   display: block;
+  animation: text-animation 0.3s ease-in;
 }
 
 .slider__ui {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 12rem;
   height: 2rem;
   gap: 1rem;
   /* border: 0.1rem solid var(--font-color); */
@@ -232,11 +256,12 @@ body {
   height: 1rem;
 }
 
-.slider__ui-item:active {
+.slider__ui-area:active .slider__ui-item {
   transform: scale(2);
   transition: all 0.3s ease-in;
 }
 
+/* Item in pseudo-radio-button */
 .radio-pseudo {
   /* display: none; */
   background-color: var(--font-color);
@@ -313,4 +338,13 @@ body {
     background-color: #DC143C;
     transition: all 0.2s ease-in;
   }
+}
+
+@media screen and (max-width: 970px) {
+ .slider__info {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+ }
 }
